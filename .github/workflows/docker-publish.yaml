@@ -16,6 +16,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - name: Install cosign
+      if: github.event_name != 'pull_request'
+      uses: sigstore/cosign-installer@v3.4.0
+      with:
+        cosign-release: 'v2.1.1'
     - uses: actions/checkout@v4
 
     - name: Set up Docker Buildx
