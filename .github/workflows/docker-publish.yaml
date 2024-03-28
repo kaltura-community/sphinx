@@ -11,3 +11,6 @@ permissions:
 jobs:
   build:
     uses: kaltura-community/ci-pipelines/.github/workflows/container-publish.yaml@main
+    with:
+      image_name: ${{ github.repository }}
+      registry: ghcr.io
