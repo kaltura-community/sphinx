@@ -3,6 +3,7 @@ FROM ubuntu:22.04
 RUN apt-get update && apt-get install -y \
     sphinxsearch \
     libmysqlclient-dev \
+    mysql-client \
     && rm -rf /var/lib/apt/lists/* \
     && mkdir -p /var/log/sphinx/data
 
